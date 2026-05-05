@@ -33,6 +33,21 @@
             scroll-behavior: smooth;
         }
 
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background: var(--focus);
+            color: #000;
+            padding: 15px;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        .skip-link:focus { top: 10px; }
+        :focus { outline: 4px solid var(--focus) !important; outline-offset: 4px; }
+
         #progress-container { position: fixed; top: 0; z-index: 1000; width: 100%; height: 7px; background: rgba(0,0,0,0.1); }
         #progress-bar { height: 100%; background: var(--primary); width: 0%; }
 
@@ -55,6 +70,7 @@
         nav a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.1rem; padding: 5px; }
 
         main { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        @media (min-width: 768px) { main { margin: 50px auto; } }
 
         .article-card {
             background: var(--card-bg);
@@ -66,6 +82,7 @@
 
         h1 { font-size: 2.5rem; margin-bottom: 10px; line-height: 1.2; letter-spacing: -1.5px; }
         h2 { color: var(--primary); font-size: 1.8rem; margin-top: 40px; border-bottom: 2px solid rgba(0, 102, 255, 0.1); padding-bottom: 5px; }
+        h3 { font-size: 1.4rem; margin-top: 30px; color: var(--primary-dark); }
 
         .btn-audio {
             background: var(--primary);
@@ -84,8 +101,15 @@
             transition: var(--transition);
         }
 
-        .img-wrapper { border-radius: 15px; overflow: hidden; margin: 30px 0; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 8px 25px rgba(0,0,0,0.1); background: #eee; }
-        .img-wrapper img { width: 100%; display: block; height: auto; min-height: 200px; }
+        .img-wrapper { 
+            border-radius: 15px; 
+            overflow: hidden; 
+            margin: 30px 0; 
+            border: 1px solid rgba(0,0,0,0.1); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            background-color: #eee;
+        }
+        .img-wrapper img { width: 100%; display: block; height: auto; }
 
         .glossary {
             background: rgba(0,0,0,0.02);
@@ -99,6 +123,7 @@
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="progress-container"><div id="progress-bar"></div></div>
 
     <header>
@@ -123,47 +148,78 @@
             </header>
 
             <div id="article-text">
-                
                 <div class="img-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Laptops_at_a_conference.jpg/1024px-Laptops_at_a_conference.jpg" alt="Digital environment" />
+                    <img src="https://picsum.photos/id/180/1200/600" alt="Person using a laptop in a dark room" />
                 </div>
 
                 <section id="intro">
                     <h2>1. Introduction: Living in the Network</h2>
                     <p>The internet is the defining architecture of modern life. We use it to learn, work, connect, and entertain. However, a concerning number of experts are now using a stronger term to describe our relationship with digital devices: <strong>Internet Slavery</strong>.</p>
-                    <p>This condition isn't about physical bondage. Instead, it describes a loss of psychological autonomy. When we spend hours mindlessly scrolling, we are no longer using technology; we are subservient to it.</p>
+                    <p>This condition isn't about physical bondage. Instead, it describes a loss of psychological autonomy. When we spend hours mindlessly scrolling, or when we feel a visceral need to check notifications immediately, we are no longer using technology; we are subservient to it.</p>
                 </section>
-
-                <div class="img-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Smartphone_addiction.jpg/800px-Smartphone_addiction.jpg" alt="Smartphone use" />
-                </div>
 
                 <section>
                     <h2>2. The Architecture of Dependency</h2>
-                    <p>Dependency is not a flaw of the internet; it is the fundamental business model. This is often called the <strong>Attention Economy</strong>. Social media apps are designed to trigger <strong>dopamine</strong> releases in our brains, similar to addictive substances.</p>
-                </section>
+                    <p>Dependency is not a flaw of the internet; it is the fundamental business model of many platforms. This is often called the <strong>Attention Economy</strong>.</p>
+                    
+                    <div class="img-wrapper">
+                        <img src="https://picsum.photos/id/160/1200/600" alt="Close up of a smartphone screen with notifications" />
+                    </div>
 
-                <div class="img-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Alone_with_smartphone.jpg/1024px-Alone_with_smartphone.jpg" alt="Mental health and digital isolation" />
-                </div>
+                    <h3>Dopamine Engineering</h3>
+                    <p>Social media apps are deliberately designed to trigger <strong>dopamine</strong> releases in our brains, similar to addictive substances. Dopamine is not just about pleasure; it's about the anticipation of reward. Features like the 'infinite scroll' keep our brains in a state of continuous seeking.</p>
+                </section>
 
                 <section>
                     <h2>3. Deep Impact: Our Brains on Screens</h2>
-                    <p>We are just beginning to understand the long-term impacts. Chronic digital overconsumption correlates with rising rates of anxiety and depression. We have lost the capacity for "Deep Work" because our attention is constantly fragmented by notifications.</p>
+                    <p>We are just beginning to understand the long-term cognitive and neurological impacts of chronic digital overconsumption.</p>
+                    
+                    <div class="img-wrapper">
+                        <img src="https://picsum.photos/id/367/1200/600" alt="An exhausted person at a desk" />
+                    </div>
+
+                    <h3>Mental Health Erosion</h3>
+                    <p>The rise of Internet Slavery correlates strongly with rising rates of anxiety and depression. When we spend our time comparing our real lives with the curated highlight reels of others (<strong>Social Comparison Bias</strong>), self-esteem plummets.</p>
+                </section>
+
+                <section>
+                    <h2>4. Societal and Ethical Implications</h2>
+                    <p>The problem is scaling from the individual to the collective level, affecting how our societies function.</p>
+                    
+                    <div class="img-wrapper">
+                        <img src="https://picsum.photos/id/342/1200/600" alt="People walking while looking at phones" />
+                    </div>
+
+                    <h3>Polarization and Echo Chambers</h3>
+                    <p>Algorithms have discovered that outrage is the strongest engagement driver. To keep us online, platforms show us extreme content, trapping us in <strong>Echo Chambers</strong> where our existing biases are reinforced.</p>
+                </section>
+
+                <section>
+                    <h2>5. Digital Emancipation: Breaking the Chains</h2>
+                    <p>We must choose between passive servitude and active autonomy. Freedom requires making conscious choices.</p>
+                    
+                    <div class="img-wrapper">
+                        <img src="https://picsum.photos/id/452/1200/600" alt="A family enjoying time together without devices" />
+                    </div>
+
+                    <h3>Implementing Digital Sabbath</h3>
+                    <p>Reclaiming autonomy requires creating protected spaces. A weekly <strong>Digital Sabbath</strong>—24 hours entirely offline—is about resetting the brain’s dopamine baseline.</p>
                 </section>
 
                 <section id="glossary" class="glossary">
                     <h2>Academic Glossary</h2>
-                    <p><strong>Autonomy:</strong> The ability to make your own conscious choices.</p>
-                    <p><strong>Dopamine:</strong> A neurotransmitter linked to motivation and reward.</p>
-                    <p><strong>FOMO:</strong> Fear Of Missing Out.</p>
+                    <p><strong>Autonomy:</strong> The ability to make your own conscious choices, free from undue external influence.</p>
+                    <p><strong>Dopamine:</strong> A neurotransmitter that plays a major role in reward-motivated behavior.</p>
+                    <p><strong>Echo Chamber:</strong> A digital environment where a person only encounters opinions that reflect their own.</p>
+                    <p><strong>FOMO:</strong> Fear Of Missing Out. Anxiety that an exciting event is currently happening elsewhere.</p>
+                    <p><strong>Persuasive Design:</strong> Technology design aimed at changing user behavior through subconscious cues.</p>
                 </section>
             </div>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Jessa Acosta English Class Project</p>
+        <p>&copy; 2026 - Digital Awareness Blog Created by **Jessa Acosta**<br>Academic Project for English Class</p>
     </footer>
 
     <script>
@@ -183,20 +239,24 @@
         speakBtn.addEventListener('click', () => {
             if (!isSpeaking) {
                 let speech = new SpeechSynthesisUtterance(textToRead);
-                speech.lang = 'en-US'; // Accento inglese
-                speech.rate = 1.0;
+                speech.lang = 'en-US';
+                speech.rate = 0.95; 
+                
                 window.speechSynthesis.speak(speech);
                 isSpeaking = true;
                 document.getElementById('speaker-icon').innerText = '🛑';
-                document.getElementById('btn-text').innerText = 'Stop';
+                document.getElementById('btn-text').innerText = 'Stop Listening';
+
                 speech.onend = () => {
                     isSpeaking = false;
                     document.getElementById('speaker-icon').innerText = '🔊';
+                    document.getElementById('btn-text').innerText = 'Listen to Report';
                 };
             } else {
                 window.speechSynthesis.cancel();
                 isSpeaking = false;
                 document.getElementById('speaker-icon').innerText = '🔊';
+                document.getElementById('btn-text').innerText = 'Listen to Report';
             }
         });
     </script>
